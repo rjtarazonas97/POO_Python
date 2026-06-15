@@ -12,22 +12,25 @@ class Pikachu:
         self.color = color
         
         self.color = color
-        
-    def get_salud(self):
+       
+    @property #estos son decoradores
+    def salud(self): #getter
         return self.__salud
-    def set_salud(self,salud):
+    
+    @salud.setter #setter
+    def salud(self,salud):
         if salud > 0 and salud < 5000:
             self.__salud = salud
         else:
             print("La salud no puede ser negativa",
                   "La salud no puede ser mayor a 5000")
+
     def atacar(self):
         print(f"Pikachu ataca y genera {self.nivel/4} de daño")
 
 pikachu_1 = Pikachu('Pepe',780,100,6,2,'Amarillo')
 
-salud_actual = pikachu_1.get_salud()
-pikachu_1.set_salud(500)
+pikachu_1.salud = 500
 
 
-print(f"El pikachu llamado {pikachu_1.nombre} tiene una salud de {pikachu_1.get_salud()}")
+print(f"El pikachu llamado {pikachu_1.nombre} tiene una salud de {pikachu_1.salud}")
