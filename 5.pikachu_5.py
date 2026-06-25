@@ -8,36 +8,13 @@ class Pikachu(Pokemon):
         # self.nombre = nombre #Atributos de instancia
         # self.__nivel = nivel
         # self.__salud = salud ya no los necesito poruque heredo de la clase pokemon
+        # aca se utiliza KWARG ARGUMENTS por eso se definide cada atributo
         super().__init__(nombre=nombre,nivel=nivel,salud = salud, color = color)
         self.__voltaje_maximo = voltaje_max #Atributos que no pueden ser modificados se denota con el guion abajo
         self.__amperaje_maximo = amperaje_max# simula el ccomportamiento de privacidad para que el atributo no sea modificado
         #self.color = color
         
         self.color = color
-       
-    @property #estos son decoradores
-    def salud(self): #getter
-        return self._Pokemon__salud
-    
-    @salud.setter #setter
-    def salud(self,salud):
-        if salud > 0 and salud < 5000:
-            self._Pokemon__salud = salud
-        else:
-            print("La salud no puede ser negativa",
-                  "La salud no puede ser mayor a 5000")
-            
-    @property
-    def nivel(self):
-        return self._Pokemon__nivel
-    
-    @nivel.setter
-    def nivel(self,nivel):
-        if nivel > 0 and nivel <= 1000:
-            self._Pokemon__nivel = nivel
-        else:
-            print("El nivel no puede ser negativo",
-                  "El nivel no puede ser mayor a 1000")
 
     @property
     def voltaje_maximo(self):
